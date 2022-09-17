@@ -18,4 +18,4 @@ file(
         DESTINATION ${CMAKE_CURRENT_BINARY_DIR}
 )
 
-add_executable(hey main.cpp watch.h)
+add_executable(hey main.cpp partial.h)

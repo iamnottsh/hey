@@ -169,7 +169,7 @@
 		},
 		{
 			"backtrace" : 1,
-			"path" : "watch.h",
+			"path" : "partial.h",
 			"sourceGroupIndex" : 1
 		}
 	],
