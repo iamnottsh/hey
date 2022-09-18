@@ -60,8 +60,7 @@ namespace hey {
                                       path,
                                       boost::asio::file_base::write_only | boost::asio::file_base::create);
         file.seek(begin, boost::asio::file_base::seek_set);
-        handler.write(co_await boost::asio::async_write(stream, buf, boost::asio::use_awaitable));
-        while (size) {
+        while (handler.write(co_await boost::asio::async_write(stream, buf, boost::asio::use_awaitable)), size) {
             const auto bytes_transferred = co_await stream.async_read_some(buf.prepare(std::min(size,
                                                                                                 std::max(512uz,
                                                                                                          buf.capacity() -
@@ -70,7 +69,6 @@ namespace hey {
             buf.commit(bytes_transferred);
             size -= bytes_transferred;
             handler.read(bytes_transferred);
-            handler.write(co_await boost::asio::async_write(stream, buf, boost::asio::use_awaitable));
         }
     }
 }
