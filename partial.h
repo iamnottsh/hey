@@ -62,7 +62,7 @@ namespace hey {
         file.seek(begin, boost::asio::file_base::seek_set);
         while (handler.write(co_await boost::asio::async_write(stream, buf, boost::asio::use_awaitable)), size) {
             const auto bytes_transferred = co_await stream.async_read_some(buf.prepare(std::min(size,
-                                                                                                std::max(512uz,
+                                                                                                std::max(1024uz,
                                                                                                          buf.capacity() -
                                                                                                          buf.size()))),
                                                                            boost::asio::use_awaitable);

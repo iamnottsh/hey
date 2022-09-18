@@ -1,3 +1,5 @@
 # ninja log v5
 9	3332	6851357383371053	CMakeFiles/hey.dir/main.cpp.obj	aa3cb48b9f648dc9
 3333	3757	6851357387608537	hey.exe	bb9dd5b531fac55d
+1	2811	6851903050835974	CMakeFiles/hey.dir/main.cpp.obj	aa3cb48b9f648dc9
+2811	3018	6851903052888057	hey.exe	bb9dd5b531fac55d
